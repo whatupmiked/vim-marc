@@ -1,0 +1,10 @@
+A plugin for transforming marc records.
+
+To transform a record from the one-line marc format to a displayed format use the MrcCompile() function.
+Change the <C-k> below to a hotkey of your choice.
+map <C-k> :MrcCompile<CR>
+
+To transfor a record from the multi-line display format to a one-line compiled format use the MrcDisplay() function.
+Change the <C-l> below to a hotkey of your choice.
+map <C-l> :MrcDisplay<CR>
+
