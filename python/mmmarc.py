@@ -3,7 +3,7 @@ import vim
 import sys
 import argparse
 
-def mrcCompile():
+def mrcDisplay():
     """
     VIM Script function for converting a single line
     mrc record into a displayed mrc record
@@ -23,7 +23,12 @@ def mrcCompile():
     for i in range(len(directory)):
         vim.current.buffer.append("=" + directory[i][:3] + "  " + split_record[i+1])
 
-def mrcDisplay():
+def mrcCompile():
+    """
+    VIM Script function for converting a multi line
+    mrc record in display format to compile a compiled
+    record
+    """
     display_list = vim.current.buffer
 
     field_len = []
@@ -61,6 +66,5 @@ def mrcDisplay():
     compiled_record += eof_delimiter
     compiled_record = LDR + field_delimiter + compiled_record
 
-    print(str(len(field_len)), str(len(field_tag)), str(len(field_offset)))
     del vim.current.buffer[:]
     vim.current.buffer[0] = compiled_record
