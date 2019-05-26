@@ -2,7 +2,7 @@
 
 Vim-marc                                             *vim-marc*
 
-1. Description                      |vim-mark-description|
+1. Description                      |vim-marc-description|
 2. Usage                            |vim-marc-use| |vim-marc-usage|
 3. Contributors                     |vim-marc-authors| |vim-marc-contributions|
 4. License                          |vim-marc-license|
@@ -21,8 +21,7 @@ USAGE                                           *vim-marc-use* *vim-marc-usage*
                                                             *vim-marc-options*
 Commands~
                                                                 *:MrcCompile*
-:MrcCompile             To transform a record from the one-line marc format to
-                        a displayed format use the MrcCompile() function.
+:MrcCompile             To transform a record from the one-line marc format to displayed format use the MrcCompile() function.
 
                                                                 *:MarcDisplay*
 :MrcDisplay             To transfor a record from the multi-line display format
