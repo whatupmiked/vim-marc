@@ -1,6 +1,6 @@
 *vim-marc.txt*  Plugin for transforming mrk snippets to mrc records.
 
-Vim-marc                                             *vim-marc*
+Vim-marc                                                         *vim-marc*
 
 1. Description                      |vim-marc-description|
 2. Usage                            |vim-marc-use| |vim-marc-usage|
@@ -14,24 +14,25 @@ Vim-marc depends on SnipMate and vim-snippets-mrc.
 DESCRIPTION                                             *vim-marc-description*
 
 This is what the plugin does.
+Note: this needs doing.
 
 ==============================================================================
 USAGE                                           *vim-marc-use* *vim-marc-usage*
 
                                                             *vim-marc-options*
 Commands~
-                                                                *:MrcCompile*
-:MrcCompile             To transform a record from the one-line marc format to displayed format use the MrcCompile() function.
+                                                                 *:MrcDisplay*
+:MrcDisplay              To transform a record from the one-line marc format to
+                                displayed format use the MrcDisplay() function.
 
-                                                                *:MarcDisplay*
-:MrcDisplay             To transfor a record from the multi-line display format
-                        to a one-line compiled format use the MrcDisplay()
-                        function.
+                                                                 *:MrcCompille*
+:MrcCompille            To transfor a record from display format to a one-line
+                        compiled format use the MrcCompille() function.
 
                                                             *vim-marc-mappings*
 Mappings~
 
-The mappings Vim-marc uses can be created with the |:map| commands.
+The mappings Vim-marc uses can be created with the 'map' command.
 To add mappings for the above commands to your vimrc file use:
 
     map <C-K> :MrcCompile<CR>
@@ -39,23 +40,26 @@ To add mappings for the above commands to your vimrc file use:
 
 These can be changed to a hot key of your choice.
 
-A list of predefined mode-specific mappings can be inserted in
+Note: A list of predefined mode-specific mappings can be inserted in
 /plugin/vim-marc.vim
 
 ==============================================================================
 CONTRIBUTORS                        *vim-marc-authors* *vim-marc-contributors*
 
 Vim-marc is currently maintained by:
-  - Miglena Minkova
-  - Michael Doyle
+    - Michael Doyle
+    - Miglena Minkova
 
 For bug reports, issues, or questions, check out the Issues page on GitHub:
-https://github.com/
+https://github.com/whatupmiked/vim-marc/issues
 
 ==============================================================================
 LICENSE                                                     *vim-marc-license*
 
-This is the link to the license.
+BSD License https://opensource.org/licenses/bsd-license.php
+MIT License https://opensource.org/licenses/MIT
+
+Copyright 2019. Michael Doyle. All rights reserved.
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:
