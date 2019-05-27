@@ -22,12 +22,12 @@ import mmmarc
 EOF
 
 function! MrcCompile()
-    py3 mmmarc.mrcCompile()
+    py3 mmmarc.vim_mrc_compile()
 endfunction
 command! -nargs=0 MrcCompile call MrcCompile()
 
 function! MrcDisplay()
-    py3 mmmarc.mrcDisplay()
+    py3 mmmarc.vim_mrc_display()
 endfunction
 command! -nargs=0 MrcDisplay call MrcDisplay()
 
