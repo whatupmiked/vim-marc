@@ -14,11 +14,11 @@ Vim-marc depends on SnipMate and vim-snippets-mrc.
 DESCRIPTION                                             *vim-marc-description*
 
 This is what the plugin does.
-Note: this needs doing.
 
 ==============================================================================
 USAGE                                           *vim-marc-use* *vim-marc-usage*
 
+Maximum number of records
                                                             *vim-marc-options*
 Commands~
                                                                  *:MrcDisplay*
@@ -46,9 +46,8 @@ Note: A list of predefined mode-specific mappings can be inserted in
 ==============================================================================
 CONTRIBUTORS                        *vim-marc-authors* *vim-marc-contributors*
 
-Vim-marc is currently maintained by:
-    - Michael Doyle
-    - Miglena Minkova
+Vim-marc is authored and currently maintained by whatupmikeD with the help of
+Miglena Minkova.
 
 For bug reports, issues, or questions, check out the Issues page on GitHub:
 https://github.com/whatupmiked/vim-marc/issues
