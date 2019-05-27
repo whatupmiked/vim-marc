@@ -1,4 +1,8 @@
-#!/bin/python3
+"""
+The mmmarc.py module is the backend to the VIM plugin
+vim-marc and is used for converting mrk formatted files
+to mrc format.
+"""
 import vim
 
 def single_mrc_display(stdin):
