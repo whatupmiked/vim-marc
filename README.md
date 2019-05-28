@@ -1,7 +1,7 @@
 # vim-marc
 Plugin for transforming mrk snippets to mrc records.
 
-[![asciicast](https://asciinema.org/a/Kv2B2FifC1VvbL1RkJZUuVFn9.svg)](https://asciinema.org/a/Kv2B2FifC1VvbL1RkJZUuVFn9?autoplay=1?loop=1)
+[![asciicast](https://asciinema.org/a/Kv2B2FifC1VvbL1RkJZUuVFn9.svg)](https://asciinema.org/a/Kv2B2FifC1VvbL1RkJZUuVFn9?autoplay=1&loop=1&speed=2)
 
 ## Documentation
 To view the documentation in vim type `:help vim-marc`
