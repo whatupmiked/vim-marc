@@ -13,7 +13,10 @@ Vim-marc depends on SnipMate and vim-snippets-mrc.
 ==============================================================================
 DESCRIPTION                                             *vim-marc-description*
 
-This is what the plugin does.
+Formatting References:
+ISO 2709:2008 https://www.iso.org/standard/41319.html
+MARC21 Bibliographic Standard https://www.loc.gov/marc/bibliographic/
+MarcEdit https://marcedit.reeset.net/
 
 ==============================================================================
 USAGE                                           *vim-marc-use* *vim-marc-usage*
