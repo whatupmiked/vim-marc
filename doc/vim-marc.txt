@@ -13,16 +13,56 @@ Vim-marc depends on SnipMate and vim-snippets-mrc.
 ==============================================================================
 DESCRIPTION                                             *vim-marc-description*
 
-Formatting References:
-ISO 2709:2008 https://www.iso.org/standard/41319.html
-MARC21 Bibliographic Standard https://www.loc.gov/marc/bibliographic/
-MarcEdit https://marcedit.reeset.net/
+Vim-marc converts MARC bibliographic records between .mrc and .mrk file
+formats.
 
+                                                        *vim-marc-formats*
+Formats~
+
+Vim-marc uses 2 standard formats for displaying and compiling MARC records.
+- MarkEdit's Mnemonic .mrk text format is used for displaying bibliographic
+  records
+- MARC21 .mrc file format is used for compiling bibliographic records
+
+Formatting References:
+MARC21 Format for Bibliographic Data (.mrc, .marc) https://www.loc.gov/marc/bibliographic/
+ISO 2709:2008 Format for Information Exchange https://www.iso.org/standard/41319.html
+MARC21 XML Schema (.marcxml) http://www.loc.gov/standards/marcxml/
+MarcEdit Mnemonic File format (.mrk) https://marcedit.reeset.net/
+
+                                                        *vim-marc-encodings*
+Encodings~
+Vim-marc supports and enforces UTF-8 character encoding upon opening and
+saving MARC files.
 ==============================================================================
 USAGE                                           *vim-marc-use* *vim-marc-usage*
 
-Maximum number of records
-                                                            *vim-marc-options*
+Vim-marc is intended to be use for individual or small sets of bibliographic
+records. 
+                                                            *vim-marc-workflows*
+Workflows~
+
+Creating records
+1. Create .mrk file
+2. Use [vim-snippets-mrc](https://github.com/MMinkova/vim-snippets-mrc) to
+catalogue book
+3. Save the .mrk file after creating records
+4. Run :MrcCompile command to compile the file in .mrc format
+5. Save the file as .mrc file
+
+Editing records
+1. Open .mrc file
+2. Run :MrcDisplay command to display file in .mrk format
+3. Edit file
+4. Save the .mrk file after editing records
+5. Run :MrcCompile command to compile the file in .mrc format
+6. Save the file as .mrc file
+
+Note: It is recommended to regularly save your file in .mrk file format during
+editing. When you finish editing ensure that you have saved your .mrk file
+before compilling it in .mrc format.
+
+                                                            *vim-marc-commands*
 Commands~
                                                                  *:MrcDisplay*
 :MrcDisplay              To transform a record from the one-line marc format to
@@ -45,6 +85,11 @@ These can be changed to a hot key of your choice.
 
 Note: A list of predefined mode-specific mappings can be inserted in
 /plugin/vim-marc.vim
+
+                                                    *vim-marc-syntax-highlighting*
+Syntax highlighting~
+
+Vim-marc is packaged with syntax highlighting for both .mrc and .mrk formats.
 
 ==============================================================================
 CONTRIBUTORS                        *vim-marc-authors* *vim-marc-contributors*
