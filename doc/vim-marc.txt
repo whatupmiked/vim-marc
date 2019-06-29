@@ -45,18 +45,21 @@ Workflows~
 Creating records
 1. Create .mrk file
 2. Use [vim-snippets-mrc](https://github.com/MMinkova/vim-snippets-mrc) to
-catalogue book
+catalogue book. Syntax highlighting for mrk format will be enabled.
 3. Save the .mrk file after creating records
 4. Run :MrcCompile command to compile the file in .mrc format
-5. Save the file as .mrc file
+5. Save the file as .mrc file. Syntax highlighting for mrc format will be
+enabled.
 
 Editing records
 1. Open .mrc file
 2. Run :MrcDisplay command to display file in .mrk format
+3. Save file in mrk format to enable syntax highlighting
 3. Edit file
 4. Save the .mrk file after editing records
 5. Run :MrcCompile command to compile the file in .mrc format
-6. Save the file as .mrc file
+6. Save the file as .mrc file. Syntax highlighting for mrc format will be
+enabled.
 
 Note: It is recommended to regularly save your file in .mrk file format during
 editing. When you finish editing ensure that you have saved your .mrk file
