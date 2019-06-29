@@ -1,5 +1,5 @@
 " Name: vim-marc
-" Description: syntax highlight for .mrc files
+" Description: syntax highlighting for mrk file type
 " Authors: Michael Doyle & Miglena Minkova
 " Date: June 29, 2019
 "
