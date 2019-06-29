@@ -22,11 +22,12 @@ syntax region MrcRecord start=/\d\{5}\w\{3}[ a]a22\d\{5}\p\{3}4500/ matchgroup=M
 syntax region MrcDir matchgroup=MrcLDR start=/\d\{5}\w\{3}[ a]a22\d\{5}\p\{3}4500/ matchgroup=MrcField end=/\%x1e/ contained
 syntax match MrcField /\%x1e/ contained
 syntax region MrcSubfield start=/\%x1f/ matchgroup=MrcSubfieldTag end=/\w/ contained
-"" Colour groups
+"" Define Colour groups
 highlight link MrcDir Statement
-highlight link MrcSubfield Statement
 
+highlight link MrcSubfield Keyword
 highlight link MrcSubfieldTag Keyword
+
 highlight link MrcField Number
 highlight link MrcRecord String
 

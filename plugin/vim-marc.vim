@@ -23,11 +23,13 @@ EOF
 
 function! MrcCompile()
     py3 mmmarc.vim_mrc_compile()
+    set filetype=mrc
 endfunction
 command! -nargs=0 MrcCompile call MrcCompile()
 
 function! MrcDisplay()
     py3 mmmarc.vim_mrc_display()
+    set filetype=mrk
 endfunction
 command! -nargs=0 MrcDisplay call MrcDisplay()
 
