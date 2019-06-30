@@ -44,22 +44,20 @@ Workflows~
 
 Creating records
 1. Create .mrk file
-2. Use [vim-snippets-mrc](https://github.com/MMinkova/vim-snippets-mrc) to
-catalogue book. Syntax highlighting for mrk format will be enabled.
+2. Use [vim-snippets-mrk](https://github.com/MMinkova/vim-snippets-mrk) to
+help you catalogue various formats.
 3. Save the .mrk file after creating records
 4. Run :MrcCompile command to compile the file in .mrc format
-5. Save the file as .mrc file. Syntax highlighting for mrc format will be
-enabled.
+5. Save the file as .mrc file.
 
 Editing records
 1. Open .mrc file
 2. Run :MrcDisplay command to display file in .mrk format
-3. Save file in mrk format to enable syntax highlighting
+3. Save file in mrk format.
 3. Edit file
 4. Save the .mrk file after editing records
 5. Run :MrcCompile command to compile the file in .mrc format
-6. Save the file as .mrc file. Syntax highlighting for mrc format will be
-enabled.
+6. Save the file as .mrc file.
 
 Note: It is recommended to regularly save your file in .mrk file format during
 editing. When you finish editing ensure that you have saved your .mrk file
@@ -106,10 +104,7 @@ https://github.com/whatupmiked/vim-marc/issues
 ==============================================================================
 LICENSE                                                     *vim-marc-license*
 
-BSD License https://opensource.org/licenses/bsd-license.php
-MIT License https://opensource.org/licenses/MIT
-
-Copyright 2019. Michael Doyle. All rights reserved.
+[MIT License](https://opensource.org/licenses/MIT)
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:
