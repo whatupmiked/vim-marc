@@ -1,5 +1,5 @@
 # vim-marc
-Plugin for transforming mrk snippets to mrc records.
+Plugin for transforming biblographic records in MarcEdit .mrk format to [marc21](https://www.loc.gov/marc/bibliographic/) .mrc records.
 
 [![asciicast](https://asciinema.org/a/MgUA593GNoz1tHGAO1euIJ2oF.svg)](https://asciinema.org/a/MgUA593GNoz1tHGAO1euIJ2oF?autoplay=1&loop=1&speed=2)
 
