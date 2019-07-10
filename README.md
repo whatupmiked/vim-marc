@@ -31,3 +31,7 @@ single .mrc file you may hit the line highlighting limit. To remove the limit
 add set smc=0 to your vimrc file. Warning: this may add redraw delay.
 Alternatively set it to a large value of your choice (e.g. 10000). For more
 details on smc type :help smc.
+
+## Contribution
+Pull requests welcome!
+Please feel free to rate the plugin on [vim.org](https://www.vim.org/scripts/script.php?script_id=5809) if you like it!
