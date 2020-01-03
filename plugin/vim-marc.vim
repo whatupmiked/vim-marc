@@ -19,6 +19,7 @@ plugin_root_dir = vim.eval('s:plugin_root_dir')
 python_root_dir = normpath(join(plugin_root_dir, '..', 'python'))
 sys.path.insert(0, python_root_dir)
 import mmmarc
+import marcxml
 EOF
 
 function! MrcCompile()
@@ -32,5 +33,17 @@ function! MrcDisplay()
     set filetype=mrk
 endfunction
 command! -nargs=0 MrcDisplay call MrcDisplay()
+
+function! MrcXML2Mrk()
+    py3 marcxml.xmlToMrk()
+    set filetype=mrk
+endfunction
+command! -nargs=0 MrcXML call MrcXML()
+
+function! MrcXML()
+    py3 marcxml.mrkToXML()
+    set filetype=xml
+endfunction
+command! -nargs=0 MrcXML2 call MrcXML2()
 
 let g:marc_plugin_loaded = 1
