@@ -1,7 +1,7 @@
 # vim-marc
 Plugin for converting MARC 21 bibliographic records between .mrc, .mrk and .xml file formats.
 
-[![asciicast](https://asciinema.org/a/MgUA593GNoz1tHGAO1euIJ2oF.svg)](https://asciinema.org/a/MgUA593GNoz1tHGAO1euIJ2oF?autoplay=1&loop=1&speed=2)
+[![asciicast](https://asciinema.org/a/WGLMwpUtLvsx1jfQlbFGS2hgz.svg)](https://asciinema.org/a/WGLMwpUtLvsx1jfQlbFGS2hgz?autoplay=1&loop=1&speed=2)
 
 ## Formats
 `vim-marc` converts between 3 standard formats:
@@ -10,10 +10,10 @@ Plugin for converting MARC 21 bibliographic records between .mrc, .mrk and .xml 
 - **.xml** XML format using the [Library of Congress MARC21 XML Schema](http://www.loc.gov/standards/marcxml/).
 
 ## Commands
-- `:Mrc21`        Converts to MARC 21 format, sets file type to .mrc
-- `:MrcMrk`       Converts to mnemonic text format, sets file type to .mrk
-- `:MrcXML`       Converts to MARC XML format, sets file type to .xml
-- `:MrcCycle`     Cycles through MARC 21, Mnnemonic text format and MARC XML, sets file type respectively to .mrc, .mrk and .xml
+`:Mrc21`        Converts to MARC 21 format, sets file type to .mrc  
+`:MrcMrk`       Converts to mnemonic text format, sets file type to .mrk  
+`:MrcXML`       Converts to MARC XML format, sets file type to .xml  
+`:MrcCycle`     Cycles through MARC 21, Mnnemonic text format and MARC XML, sets file type respectively to .mrc, .mrk and .xml  
 
 ## Mappings
 Hot keys for the above commands can created with the [map](http://vimdoc.sourceforge.net/htmldoc/map.html) command and added to your VIM configuration file .vimrc (Linux/Unix) or vimrc (Windows).
@@ -26,7 +26,7 @@ map <C-Y> :MrcCycle<CR>
 ```
 These can be changed to a hot key of your choice.
 
-Note: A list of predefined mode-specific mappings can be inserted in
+**Note:** A list of predefined mode-specific mappings can be inserted in
 `/plugin/vim-marc.vim`
 
 ## Syntax highlighting
@@ -39,9 +39,6 @@ To remove the limit add set smc=0 to your vimrc file.Warning: this may add redra
 
 ## Encoding
 When converting between .mrk and .mrc, `vim-marc` enforces utf-8 character encoding in order to get the correct ASCII character length.
-
-## Installation (without a plugin manager)
-Clone `vim-marc` to `~/.vim/pack/username/start/` directory.
 
 ## Documentation
 To view the documentation in vim type `:help vim-marc`
