@@ -39,4 +39,9 @@ function! MrcXML()
 endfunction
 command! -nargs=0 MrcXML call MrcXML()
 
+function! MrcCycle()
+    py3 mmmarc.vim_marc_carousel()
+endfunction
+command! -nargs=0 MrcCycle call MrcCycle()
+
 let g:marc_plugin_loaded = 1
