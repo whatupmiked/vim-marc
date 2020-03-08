@@ -1,37 +1,58 @@
 # vim-marc
-Plugin for transforming biblographic records in MarcEdit .mrk format to and from [marc21](https://www.loc.gov/marc/bibliographic/) .mrc records.
+Plugin for converting MARC 21 bibliographic records between .mrc, .mrk and .xml file formats.
 
 [![asciicast](https://asciinema.org/a/MgUA593GNoz1tHGAO1euIJ2oF.svg)](https://asciinema.org/a/MgUA593GNoz1tHGAO1euIJ2oF?autoplay=1&loop=1&speed=2)
+
+## Formats
+`vim-marc` converts between 3 standard formats:
+- **.mrk** mnemonic text format native to [MarcEdit](https://marcedit.reeset.net/)'s MarcEditor, used for editing and displaying bibliographic records in a human readable format.
+- **.mrc** [MARC 21](https://www.loc.gov/marc/bibliographic/) Machine Readable Cataloguing standard for bibliographic data using [ISO 2709:2008](https://www.iso.org/standard/41319.html).
+- **.xml** XML format using the [Library of Congress MARC21 XML Schema](http://www.loc.gov/standards/marcxml/).
+
+## Commands
+- `:Mrc21`        Converts to MARC 21 format, sets file type to .mrc
+- `:MrcMrk`       Converts to mnemonic text format, sets file type to .mrk
+- `:MrcXML`       Converts to MARC XML format, sets file type to .xml
+- `:MrcCycle`     Cycles through MARC 21, Mnnemonic text format and MARC XML, sets file type respectively to .mrc, .mrk and .xml
+
+## Mappings
+Hot keys for the above commands can created with the [map](http://vimdoc.sourceforge.net/htmldoc/map.html) command and added to your VIM configuration file .vimrc (Linux/Unix) or vimrc (Windows).
+
+```
+map <C-C> :Mrc21<CR>
+map <C-K> :MrcMrk<CR>
+map <C-X> :MrcXML<CR>
+map <C-Y> :MrcCycle<CR>
+```
+These can be changed to a hot key of your choice.
+
+Note: A list of predefined mode-specific mappings can be inserted in
+`/plugin/vim-marc.vim`
+
+## Syntax highlighting
+`vim-marc` is packaged with syntax highlighting for .mrc and .mrk formats.
+It uses the build-in .xml highlighting in vim.
+
+Note: Vim has a maximum # of characters per line that it can highlight by default. This value is 3000. If you have a long record, or multiple records in a single .mrc file you may hit the highlighting limit.
+
+To remove the limit add set smc=0 to your vimrc file.Warning: this may add redraw delay. Alternatively, set it to a large value of your choice (eg. 10000).
+
+## Encoding
+When converting between .mrk and .mrc, `vim-marc` enforces utf-8 character encoding in order to get the correct ASCII character length.
+
+## Installation (without a plugin manager)
+Clone `vim-marc` to `~/.vim/pack/username/start/` directory.
 
 ## Documentation
 To view the documentation in vim type `:help vim-marc`
 If the documentation is not loading, compile help tags file `:helptags ALL`
 
-## Usage
-Typing `:MrcCompile` in VIM ex-mode will cause a .mrc file to be converted
-to .mrk format.
-Typing `:MrcDisplay` in VIM ex-mode will cause a .mrk file to be converted
-to the .mrc format.
-
-### Hot keys
-Hot keys for the functions can be mapped in your VIM configuration file
-which is `.vimrc` on Linux/Unix or `vimrc` on Windows.
-
-For example, to map the `MrcCompile` function to the Ctrl+k hotkey and the
-`MrcDisplay` function to Ctrl+l add the following to your VIMRC:
-```
-map <C-k> :MrcCompile<CR>
-map <C-l> :MrcDisplay<CR>
-```
-
-### Notes on syntax highlighting
-VIM has a maximum # of characters per line that it can highlight be default.
-This value is 3000. If you have a long .mrc record, or multiple records in a
-single .mrc file you may hit the line highlighting limit. To remove the limit
-add set smc=0 to your vimrc file. Warning: this may add redraw delay.
-Alternatively set it to a large value of your choice (e.g. 10000). For more
-details on smc type :help smc.
+## Dependencies
+Tested on Vim version 8.1 and Python version 3.5.2 or later.
 
 ## Contribution
 Pull requests welcome!
 Please feel free to rate the plugin on [vim.org](https://www.vim.org/scripts/script.php?script_id=5809) if you like it!
+
+## License
+[MIT License](https://opensource.org/licenses/MIT)

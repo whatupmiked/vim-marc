@@ -1,86 +1,70 @@
-*vim-marc.txt*  Plugin for transforming mrk snippets to mrc records.
+*vim-marc.txt*  
+Plugin for converting MARC 21 bibliographic records between .mrc, .mrk and
+.xml file formats..
 
 Vim-marc                                                         *vim-marc*
 
 1. Description                      |vim-marc-description|
+                                    |vim-marc-formats| |vim-marc-encoding|
 2. Usage                            |vim-marc-use| |vim-marc-usage|
+                                    |vim-marc-commands|
 3. Contributors                     |vim-marc-authors| |vim-marc-contributions|
 4. License                          |vim-marc-license|
 
-For Vim version 7.0 or later.
-Vim-marc depends on SnipMate and vim-snippets-mrc.
+For Vim version 8.1 and Python version 3.5.2 or later.
 
 ==============================================================================
-DESCRIPTION                                             *vim-marc-description*
+DESCRIPTION                                         *vim-marc-description*
 
-Vim-marc converts MARC bibliographic records between .mrc and .mrk file
+Vim-marc converts MARC 21 bibliographic records between .mrc, .mrk and .xml file
 formats.
 
-                                                        *vim-marc-formats*
+                                                    *vim-marc-formats*
 Formats~
 
-Vim-marc uses 2 standard formats for displaying and compiling MARC records.
-- MarkEdit's Mnemonic .mrk text format is used for displaying bibliographic
-  records
-- MARC21 .mrc file format is used for compiling bibliographic records
+Vim-marc converts between 3 standard formats:
+- *.mrk* mnemonic text format native to MarcEdit's MarcEditor
+  (https://marcedit.reeset.net/), used for editing and displaying
+  bibliographic records in a human readable format.
+- *.mrc* MARC 21 (https://www.loc.gov/marc/bibliographic/) Machine Readable
+  Cataloguing standard for bibliographic data using ISO 2709:2008
+  (https://www.iso.org/standard/41319.html).
+- *.xml* XML format using the Library of Congress MARC21 XML Schema
+  (http://www.loc.gov/standards/marcxml/).
 
-Formatting References:
-MARC21 Format for Bibliographic Data (.mrc, .marc) https://www.loc.gov/marc/bibliographic/
-ISO 2709:2008 Format for Information Exchange https://www.iso.org/standard/41319.html
-MARC21 XML Schema (.marcxml) http://www.loc.gov/standards/marcxml/
-MarcEdit Mnemonic File format (.mrk) https://marcedit.reeset.net/
-
-                                                        *vim-marc-encodings*
-Encodings~
-Vim-marc supports and enforces UTF-8 character encoding upon opening and
-saving MARC files.
+                                                    *vim-marc-encoding*
+Encoding~
+When converting between .mrk and .mrc, vim-marc enforces utf-8 character
+encoding in order to get the correct ASCII character lenght.
 ==============================================================================
-USAGE                                           *vim-marc-use* *vim-marc-usage*
+USAGE                                               *vim-marc-use* *vim-marc-usage*
 
-Vim-marc is intended to be use for individual or small sets of bibliographic
-records. 
-                                                            *vim-marc-workflows*
-Workflows~
-
-Creating records
-1. Create .mrk file
-2. Use [vim-snippets-mrk](https://github.com/MMinkova/vim-snippets-mrk) to
-help you catalogue various formats.
-3. Save the .mrk file after creating records
-4. Run :MrcCompile command to compile the file in .mrc format
-5. Save the file as .mrc file.
-
-Editing records
-1. Open .mrc file
-2. Run :MrcDisplay command to display file in .mrk format
-3. Save file in mrk format.
-3. Edit file
-4. Save the .mrk file after editing records
-5. Run :MrcCompile command to compile the file in .mrc format
-6. Save the file as .mrc file.
-
-Note: It is recommended to regularly save your file in .mrk file format during
-editing. When you finish editing ensure that you have saved your .mrk file
-before compilling it in .mrc format.
-
-                                                            *vim-marc-commands*
+Vim-marc is intended to 
+                                                    *vim-marc-commands*
 Commands~
-                                                                 *:MrcDisplay*
-:MrcDisplay              To transform a record from the one-line marc format to
-                                displayed format use the MrcDisplay() function.
+                                                                *:Mrc21*
+:Mrc21              Converts to MARC 21 format, sets file type to .mrc
 
-                                                                 *:MrcCompille*
-:MrcCompille            To transfor a record from display format to a one-line
-                        compiled format use the MrcCompille() function.
+                                                                *:MrcMrk*
+:MrcMrk             Converts to mnemonic text format, sets file type to .mrk
+ 
+                                                                *:MrcXML*
+:MrcXML             Converts to MARC XML format, sets file type to .xml
 
-                                                            *vim-marc-mappings*
+                                                                *:MrcCycle*
+:MrcCycle           Cycles through MARC 21, Menmonic text format and MARC XML,
+                    sets file type respectively to .mrc, .mrk and .xml
+
+                                                    *vim-marc-mappings*
 Mappings~
 
 The mappings Vim-marc uses can be created with the 'map' command.
 To add mappings for the above commands to your vimrc file use:
 
-    map <C-K> :MrcCompile<CR>
-    map <C-L> :MrcDisplay<CR>
+    map <C-C> :Mrc21<CR>
+    map <C-K> :MrcMrk<CR>
+    map <C-X> :MrcXML<CR>
+    map <C-Y> :MrcCycle<CR>
 
 These can be changed to a hot key of your choice.
 
@@ -90,13 +74,21 @@ Note: A list of predefined mode-specific mappings can be inserted in
                                                     *vim-marc-syntax-highlighting*
 Syntax highlighting~
 
-Vim-marc is packaged with syntax highlighting for both .mrc and .mrk formats.
+Vim-marc is packaged with syntax highlighting for .mrc and .mrk formats.
+It uses the build-in xml highlighting in vim.
+
+Note: Vim has a maximum # of characters per line that it can highlight by
+default. This value is 3000. If you have a long record, or multiple records in
+a single .mrc file you may hit the highlighting limit.
+
+To remove the limit add set smc=0 to your vimrc file.Warning: this may add
+redraw delay. Alternatively, set it to a large value of your choice (eg. 10000).
 
 ==============================================================================
-CONTRIBUTORS                        *vim-marc-authors* *vim-marc-contributors*
+CONTRIBUTORS                            *vim-marc-authors* *vim-marc-contributors*
 
 Vim-marc is authored and currently maintained by whatupmikeD with the help of
-Miglena Minkova.
+MMinkova.
 
 For bug reports, issues, or questions, check out the Issues page on GitHub:
 https://github.com/whatupmiked/vim-marc/issues
@@ -108,5 +100,3 @@ LICENSE                                                     *vim-marc-license*
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:
-
-
