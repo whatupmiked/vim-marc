@@ -34,7 +34,7 @@ endfunction
 command! -nargs=0 MrcMrk call MrcMrk()
 
 function! MrcXML()
-    py3 marcxml.vim_xml()
+    py3 mmmarc.vim_xml()
     set filetype=xml
 endfunction
 command! -nargs=0 MrcXML call MrcXML()
