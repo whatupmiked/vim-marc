@@ -8,7 +8,7 @@
 " \%x1d = MrcRecord = GROUP SEPERATOR
 " \%x1f = MrcSubfield = UNIT SEPERATOR
 "
-" VIM has a maximum # of characters per line that it can highlight be default.
+" VIM has a maximum # of characters per line that it can highlight by default.
 " This value is 3000. If you have a long record, or multiple records in a
 " single .mrc file you may hit the highlighting limit. To remove the limit add
 " set smc=0 to your vimrc file. Warning: this may add redraw delay.

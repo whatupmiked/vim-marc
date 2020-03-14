@@ -21,16 +21,27 @@ sys.path.insert(0, python_root_dir)
 import mmmarc
 EOF
 
-function! MrcCompile()
-    py3 mmmarc.vim_mrc_compile()
+function! Mrc21()
+    py3 mmmarc.vim_mrc21()
     set filetype=mrc
 endfunction
-command! -nargs=0 MrcCompile call MrcCompile()
+command! -nargs=0 Mrc21 call Mrc21()
 
-function! MrcDisplay()
-    py3 mmmarc.vim_mrc_display()
+function! MrcMrk()
+    py3 mmmarc.vim_mrk()
     set filetype=mrk
 endfunction
-command! -nargs=0 MrcDisplay call MrcDisplay()
+command! -nargs=0 MrcMrk call MrcMrk()
+
+function! MrcXML()
+    py3 mmmarc.vim_xml()
+    set filetype=xml
+endfunction
+command! -nargs=0 MrcXML call MrcXML()
+
+function! MrcCycle()
+    py3 mmmarc.vim_marc_carousel()
+endfunction
+command! -nargs=0 MrcCycle call MrcCycle()
 
 let g:marc_plugin_loaded = 1
