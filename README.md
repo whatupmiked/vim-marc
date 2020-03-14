@@ -33,16 +33,16 @@ These can be changed to a hot key of your choice.
 `vim-marc` is packaged with syntax highlighting for .mrc and .mrk formats.
 It uses the build-in .xml highlighting in vim.
 
-Note: Vim has a maximum # of characters per line that it can highlight by default. This value is 3000. If you have a long record, or multiple records in a single .mrc file you may hit the highlighting limit.
+Note: Vim has a maximum # of characters per line that it can highlight by default. This value is 3000. If you have a long record, or multiple records in a single .mrc file, you may hit the highlighting limit.
 
-To remove the limit add set smc=0 to your vimrc file.Warning: this may add redraw delay. Alternatively, set it to a large value of your choice (eg. 10000).
+To remove the limit add set `smc=0` to your vimrc file.Warning: this may add redraw delay. Alternatively, set it to a large value of your choice (eg. 10000).
 
 ## Encoding
 When converting between .mrk and .mrc, `vim-marc` enforces utf-8 character encoding in order to get the correct ASCII character length.
 
 ## Documentation
 To view the documentation in vim type `:help vim-marc`
-If the documentation is not loading, compile help tags file `:helptags ALL`
+If the documentation is not loading, compile a help tags file `:helptags ALL`
 
 ## Dependencies
 Tested on Vim version 8.1 and Python version 3.5.2 or later.

@@ -1,6 +1,6 @@
 *vim-marc.txt*  
 Plugin for converting MARC 21 bibliographic records between .mrc, .mrk and
-.xml file formats..
+.xml file formats.
 
 Vim-marc                                                         *vim-marc*
 
@@ -16,7 +16,7 @@ For Vim version 8.1 and Python version 3.5.2 or later.
 ==============================================================================
 DESCRIPTION                                         *vim-marc-description*
 
-Vim-marc converts MARC 21 bibliographic records between .mrc, .mrk and .xml file
+Vim-marc converts MARC 21 bibliographic records between .mrc, .mrk, and .xml file
 formats.
 
                                                     *vim-marc-formats*
@@ -39,7 +39,8 @@ encoding in order to get the correct ASCII character lenght.
 ==============================================================================
 USAGE                                               *vim-marc-use* *vim-marc-usage*
 
-Vim-marc is intended to 
+Vim-marc is intended to be used to convert between bibliographic formats
+with ease.
                                                     *vim-marc-commands*
 Commands~
                                                                 *:Mrc21*
@@ -79,9 +80,9 @@ It uses the build-in xml highlighting in vim.
 
 Note: Vim has a maximum # of characters per line that it can highlight by
 default. This value is 3000. If you have a long record, or multiple records in
-a single .mrc file you may hit the highlighting limit.
+a single .mrc file, you may hit the highlighting limit.
 
-To remove the limit add set smc=0 to your vimrc file.Warning: this may add
+To remove the limit add set smc=0 to your vimrc file. Warning: this may add
 redraw delay. Alternatively, set it to a large value of your choice (eg. 10000).
 
 ==============================================================================
