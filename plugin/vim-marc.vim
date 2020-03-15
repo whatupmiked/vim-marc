@@ -44,4 +44,9 @@ function! MrcCycle()
 endfunction
 command! -nargs=0 MrcCycle call MrcCycle()
 
+function! MrcAddMrkLdr()
+    py3 mmmarc.mrk_add_ldr()
+endfunction
+command! -nargs=0 MrcAddMrkLdr call MrcAddMrkLdr()
+
 let g:marc_plugin_loaded = 1

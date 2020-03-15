@@ -8,6 +8,30 @@ import xml.etree.ElementTree as ET
 import re
 from xml.etree.ElementTree import parse, XML, fromstring, tostring
 
+def mrk_add_ldr():
+    '''
+    Takes an mrk format file and
+    computes the =ldr line and replaces
+    the =ldr line with the correct values
+    '''
+    stdin = vim.current.buffer
+    mrk = stdin[:-1]
+    bor_offset = ((len(mrk) - 1) * 12) + 24 + 1 # End of Field
+    eor_offset = 0
+    for field in mrk[1:]:
+        eor_offset += len(field[6:])
+    # construct ldr line
+    eor_offset += bor_offset + 2 # End of Field + End of Record
+    eor_offset = str(eor_offset).zfill(5)
+    bor_offset = str(bor_offset).zfill(5)
+    temp = (eor_offset + mrk[0][11:])[0:12]
+    ldr = "=ldr  " + temp + bor_offset + mrk[0][23:]
+    # replace first line of mrk
+    mrk[0] = ldr
+    del vim.current.buffer[:]
+    vim.current.buffer[0] = mrk[0]
+    vim.current.buffer.append(mrk[1:-1])
+
 def xml_add_mrk_leader(line, xmlElement):
     '''
     Takes as input a ldr field line from a mrk format file and
@@ -254,9 +278,10 @@ def single_mrc_21(stdin):
     # Make Payload
     record_dir = ""
     for j, value in enumerate(field_offset):
+        # dir_entry = tag + length of field + offset
         record_dir += field_tag[j] + str(field_len[j]).zfill(4) + str(value).zfill(5)
     # CALCULATED
-    ldr = display_list[0][6:]
+    ldr = display_list[0][6:] # The entire record
     ldr += record_dir
     compiled_record = ''
     eof_delimiter = '\x1d' #^]
@@ -295,7 +320,7 @@ def vim_mrc_to_mrk():
 def vim_mrk_to_mrc():
     '''
     VIM Function that takes a bibliographic record in .mrk
-    format, converts it to .mrk format and places in the
+    format, converts it to .mrc format and places in the
     current VIM window
     '''
     # Join on newline because vim buffers
