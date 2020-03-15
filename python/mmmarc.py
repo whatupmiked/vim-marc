@@ -16,12 +16,12 @@ def mrk_add_ldr():
     '''
     stdin = vim.current.buffer
     mrk = stdin[:-1]
-    bor_offset = ((len(mrk) - 1) * 12) + 24 + 1 # End of Field
+    bor_offset = ((len(mrk) - 1) * 12) + 24 + 1 # EoF delimiter
     eor_offset = 0
     for field in mrk[1:]:
-        eor_offset += len(field[6:])
+        eor_offset += len(field[6:]) + 1 # Add EoF delimiter
     # construct ldr line
-    eor_offset += bor_offset + 2 # End of Field + End of Record
+    eor_offset += bor_offset + 2 # EoF + EoR delimiter
     eor_offset = str(eor_offset).zfill(5)
     bor_offset = str(bor_offset).zfill(5)
     temp = (eor_offset + mrk[0][11:])[0:12]
